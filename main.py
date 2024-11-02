@@ -74,9 +74,6 @@ from Tools.scripts.pysource import binary_re
 #     print(f"Exeption: {e}")
 
 
-from fileinput import filename
-
-
 try:
     filename: str = "data.csv"
     users: dict = {
@@ -87,7 +84,6 @@ try:
             "city": "New York",
             "email": "Jon.Doe@gmail.com"
         },
-
         2: {
             "name": "jin",
             "surname": "Die",
@@ -103,11 +99,14 @@ try:
             "email": "Jack.Mic@gmail.com"
         }
     }
-    categories: str = ",".join(users[0].keys())
+
     with open(filename, 'w') as file:
-        file.write(categories)
-        file.write("\n")
-        file.write()
+        categories: str = ",".join(users[1].keys())
+        file.write(categories + "\n")
+
+        for user in users.values():
+            row: str = ",".join(str(value) for value in user.values())
+            file.write(row + "\n")
 
 except FileNotFoundError as e:
     print(f"File Not Found: {filename}")
