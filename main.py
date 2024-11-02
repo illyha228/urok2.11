@@ -15,14 +15,61 @@
 #     print(f"File Not Found: {filename}")
 # except Exception as e:
 #     print(f"Exeption: {e}")
+import hashlib
 
-try:
-    filename: str = 'text.txt'
-    file = open(filename, 'a')
-    text: str = input('Enter some text')
-    file.write(text+'\n')
+from Tools.scripts.pysource import binary_re
 
-except FileNotFoundError as e:
-    print(f"File Not Found: {filename}")
-except Exception as e:
-    print(f"Exeption: {e}")
+# try:
+#     filename: str = 'text.txt'
+#     file = open(filename, 'a')
+#     text: str = input('Enter some text')
+#     file.write(text+'\n')
+#
+# except FileNotFoundError as e:
+#     print(f"File Not Found: {filename}")
+# except Exception as e:
+#     print(f"Exeption: {e}")
+
+# try:
+#     filename: str = 'tesr.bin'
+#     file = open(filename, 'wb')
+#     text: str = input('Enter some text')
+#
+#     file.write(text.encode())
+#     file.close()
+#     binary_reabele_text: file.read().decode()
+#     print(f"Binary readed text:  {binary_reabele_text}")
+#
+# except FileNotFoundError as e:
+#     print(f"File Not Found: {filename}")
+# except Exception as e:
+#     print(f"Exeption: {e}")
+
+
+# import hashlib
+# import binascii
+#
+# try:
+#     filename: str = 'binary_file.txt'
+#     file = open(filename, 'wb')
+#     text: str = input('Enter some text: ')
+#     encode_text = text.encode()
+#
+#     file.write(encode_text)
+#     file.close()
+#
+#     with open(filename, 'rb') as file:
+#         binary_readable_text = file.read()
+#
+#     hex_encoded_text = binascii.hexlify(binary_readable_text).decode()
+#     print(f"Hexadecimal encoded text: {hex_encoded_text}")
+#
+#     decoded_bytes = binascii.unhexlify(hex_encoded_text)
+#     decoded_text = decoded_bytes.decode()
+#     print(f"Decoded text: {decoded_text}")
+#
+# except FileNotFoundError as e:
+#     print(f"File Not Found: {filename}")
+# except Exception as e:
+#     print(f"Exeption: {e}")
+
