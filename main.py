@@ -16,3 +16,13 @@
 # except Exception as e:
 #     print(f"Exeption: {e}")
 
+try:
+    filename: str = 'text.txt'
+    file = open(filename, 'a')
+    text: str = input('Enter some text')
+    file.write(text+'\n')
+
+except FileNotFoundError as e:
+    print(f"File Not Found: {filename}")
+except Exception as e:
+    print(f"Exeption: {e}")
