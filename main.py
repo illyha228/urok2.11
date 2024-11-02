@@ -73,3 +73,43 @@ from Tools.scripts.pysource import binary_re
 # except Exception as e:
 #     print(f"Exeption: {e}")
 
+
+from fileinput import filename
+
+
+try:
+    filename: str = "data.csv"
+    users: dict = {
+        1: {
+            "name": "jon",
+            "surname": "Doe",
+            "age": 30,
+            "city": "New York",
+            "email": "Jon.Doe@gmail.com"
+        },
+
+        2: {
+            "name": "jin",
+            "surname": "Die",
+            "age": 25,
+            "city": "Chikago",
+            "email": "Jin.Die@gmail.com"
+        },
+        3: {
+            "name": "Jack",
+            "surname": "Mic",
+            "age": 37,
+            "city": "London",
+            "email": "Jack.Mic@gmail.com"
+        }
+    }
+    categories: str = ",".join(users[0].keys())
+    with open(filename, 'w') as file:
+        file.write(categories)
+        file.write("\n")
+        file.write()
+
+except FileNotFoundError as e:
+    print(f"File Not Found: {filename}")
+except Exception as e:
+    print(f"Exeption: {e}")
